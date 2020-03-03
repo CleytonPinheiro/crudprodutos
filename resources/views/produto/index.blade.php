@@ -12,7 +12,7 @@
 
     <ul class="list-group">
 
-        @foreach ($produtos->toArray() as $produto)
+        @foreach ($produtos as $produto)
 
             <label for="id" class="">ID</label>
             <li class="list-group-item">{{$produto}} </li>

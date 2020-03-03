@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 
 class ProdutosController extends Controller
 {
-    public function index (Produto $produtos){
-       $produtos2 = Produto::all();
-        $produto=(array) $produtos;
-        var_dump($produto);
-        return view('produto.index',compact($produto));
+    public function index (){
+        $produtos2 = Produto::all();
+        //var_dump($produtos2);
+        return view('produto.index',compact('produto'));// Enviando a variavel para index
     }
 
     public function create()
