@@ -11,7 +11,7 @@
 
 
 
-    <form method="post">
+    <form method="post" action="/produtos/adicionar">
         @csrf
 
         <div class="form-group">
@@ -24,7 +24,7 @@
             <input type="text" class="form-control" name="categoria" id="categoria">
         </div>
 
-        <a href="{{route('criar_produto')}}" class="btn btn-dark mb-2">Adicionar produto</a>
+        <button type="submit" class="btn btn-dark mb-2">Adicionar produto</button>
 
         <a href="{{route('listar_produtos')}}" class="btn btn-dark mb-2">Listar produtos</a>
 

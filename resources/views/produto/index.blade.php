@@ -12,16 +12,16 @@
 
     <ul class="list-group">
 
-        @foreach ($produtos as $produto)
+        @foreach($produtos as $produto)
 
             <label for="id" class="">ID</label>
-            <li class="list-group-item">{{$produto}} </li>
+            <li class="list-group-item">{{$produto->id}} </li>
 
             <label for="nome" class="">Nome</label>
-            <li class="list-group-item"> {$produto->nome} </li>
+            <li class="list-group-item"> {{$produto->nome}} </li>
 
             <label for="categoria" class="">Categoria</label>
-            <li class="list-group-item"> {$produto->categoria} </li>
+            <li class="list-group-item"> {{$produto->categoria}} </li>
 
             {{-- This comment will not be present in the rendered HTML --}}
 
