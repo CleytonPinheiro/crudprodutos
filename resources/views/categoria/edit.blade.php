@@ -18,21 +18,23 @@
         </div>
     @endif
 
-    <form method="post" action="/categorias/adicionar">
+    <form method="post" action="/categorias/update/{{$categoria->id}}">
         @csrf
 
         <div class="form-group">
             <label for="nome" class="">Nome</label>
-            <input type="text" class="form-control" name="nome" id="nome">
+            <input type="text" class="form-control" name="nome" value="{{$categoria->nome}}" id="nome">
         </div>
 
-        <button type="submit" class="btn btn-dark mb-2">Adicionar Categoria</button>
+        <button type="submit" class="btn btn-dark mb-2">Atualizar categoria</button>
 
-        <a href="{{route('categorias.listar')}}" class="btn btn-dark mb-2">Listar produtos</a>
+        <a href="{{route('categorias.listar')}}" class="btn btn-dark mb-2">Listar categorias</a>
 
     </form>
 
 @endsection
+
+
 
 
 

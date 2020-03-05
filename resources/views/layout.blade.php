@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
 
 </head>
-<body> fixed-t
+<body>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
 
@@ -23,13 +23,13 @@
             <div class="nav-item collapse navbar-collapse" id="navbarNav"active>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/produtos">Categorias</a>
+                        <a class="nav-link" href="/categorias">Categorias</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/produtos">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/produtos">Sobre</a>
+                        <a class="nav-link" href="#">Sobre</a>
                     </li>
 
                 </ul>

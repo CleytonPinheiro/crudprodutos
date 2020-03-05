@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/produtos','ProdutosController@index')
     ->name('produtos.listar');
 
@@ -20,33 +21,30 @@ Route::get('/produtos/adicionar', 'ProdutosController@create')
 Route::post('/produtos/adicionar', 'ProdutosController@store')
     ->name('produtos.adicionar');
 
-Route::delete('produtos/deletar/{id}','ProdutosController@destroy')
+Route::delete('/produtos/deletar/{id}','ProdutosController@destroy')
     ->name('produtos.deletar');
 
-Route::post('produtos/editar/{id}','ProdutosController@editar')
+Route::post('/produtos/editar/{id}','ProdutosController@editar')
     ->name('produtos.editar');
 
-
-Route::post('produtos/update/{id}', 'ProdutosController@update');
-
-
-
-
-
-
-
+Route::post('/produtos/update/{id}', 'ProdutosController@update');
 
 
 //*CATEGORIAS
+
 Route::get('/categorias','CategoriasController@index')
     ->name('categorias.listar');
 
 Route::get('/categorias/adicionar','CategoriasController@create')
     ->name('form_criar_categoria');
 
-Route::delete('/categorias/adicionar', 'CategoriasController@store')
+Route::post('/categorias/adicionar', 'CategoriasController@store')
     ->name('categorias.adicionar');
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::delete('/categorias/deletar/{id}','CategoriasController@destroy')
+    ->name('categorias.deletar');
+
+Route::post('categorias/editar/{id}','CategoriasController@editar')
+    ->name('categorias.editar');
+
+Route::post('/categorias/update/{id}', 'CategoriasController@update');

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Produto;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Object_;
 
 class ProdutosController extends Controller
 {
