@@ -60,3 +60,17 @@
 
 </body>
 </html>
+
+
+public function update(Request $request, $id)
+{
+$property = Property::find($id);
+if ($property)
+{
+$property->valor = $request->get('valor');
+$property->proprietario = $request->get('proprietario');
+$property->nome = $request->get('nome');
+$property->save();
+}
+return redirect()->action('PropertyController@index');
+}

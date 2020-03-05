@@ -18,17 +18,17 @@
         </div>
     @endif
 
-    <form method="post" action="/produtos/editar/{{$produto->id}}">
+    <form method="post" action="/produtos/update/{{$produto->id}}">
         @csrf
 
         <div class="form-group">
             <label for="nome" class="">Nome</label>
-            <input type="text" class="form-control" name="nome" id="nome">
+            <input type="text" class="form-control" name="nome" value="{{$produto->nome}}" id="nome">
         </div>
 
         <div class="form-group">
             <label for="categoria" class="">Categoria</label>
-            <input type="text" class="form-control" name="categoria" id="categoria">
+            <input type="text" class="form-control" name="categoria" value="{{$produto->categoria}}"  id="categoria">
         </div>
 
         <button type="submit" class="btn btn-dark mb-2">Atualizar produto</button>

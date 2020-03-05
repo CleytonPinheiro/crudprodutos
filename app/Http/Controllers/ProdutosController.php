@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Produto;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Object_;
 
 class ProdutosController extends Controller
 {
@@ -20,15 +21,20 @@ class ProdutosController extends Controller
         return view('produto.create');
     }
 
-    public function update(Request $request)
+    public function editar($id)
     {
-        $produto= Produto::updating($request);
-        var_dump($request);
-        die();
-        //return view('produto.update','produto');
-        //$produto->nome = $request->nome;
-        //$produto->categoria = $request->categoria;
-        //$produto->save;
+        $produto = Produto::find($id);
+        return view('produto.edit',compact('produto'));
+    }
+
+
+    public function update(Request $request,$id)
+    {
+         Produto::find($id)->update($request->all());
+
+        $request->session()->flash('mensagem',"Produto atualizado com sucesso");
+
+        return redirect()->route('produtos.listar');
 
     }
 

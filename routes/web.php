@@ -23,8 +23,18 @@ Route::post('/produtos/adicionar', 'ProdutosController@store')
 Route::delete('produtos/deletar/{id}','ProdutosController@destroy')
     ->name('produtos.deletar');
 
-Route::post('produtos/editar/{id}','ProdutosController@update')
+Route::post('produtos/editar/{id}','ProdutosController@editar')
     ->name('produtos.editar');
+
+
+Route::post('produtos/update/{id}', 'ProdutosController@update');
+
+
+
+
+
+
+
 
 
 //*CATEGORIAS

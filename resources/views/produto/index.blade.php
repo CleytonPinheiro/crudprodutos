@@ -37,7 +37,7 @@
                             <div class="btn-group">
                                 <form method="post" action="produtos/editar/{{$produto->id}}">
                                     @csrf
-                                    <button class="btn btn-primary fas fa-edit ">    Editar</button>
+                                    <button  class="btn btn-primary fas fa-edit ">    Editar</button>
                                 </form>
 
                                 <form method="post" action="produtos/deletar/{{$produto->id}}"
