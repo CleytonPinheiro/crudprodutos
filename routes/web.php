@@ -12,13 +12,30 @@
 */
 
 Route::get('/produtos','ProdutosController@index')
-    ->name('listar_produtos');
+    ->name('produtos.listar');
 
 Route::get('/produtos/adicionar', 'ProdutosController@create')
     ->name('form_criar_produto');
 
 Route::post('/produtos/adicionar', 'ProdutosController@store')
-    ->name('criar_produto');
+    ->name('produtos.adicionar');
+
+Route::delete('produtos/deletar/{id}','ProdutosController@destroy')
+    ->name('produtos.deletar');
+
+Route::post('produtos/editar/{id}','ProdutosController@update')
+    ->name('produtos.editar');
+
+
+//*CATEGORIAS
+Route::get('/categorias','CategoriasController@index')
+    ->name('categorias.listar');
+
+Route::get('/categorias/adicionar','CategoriasController@create')
+    ->name('form_criar_categoria');
+
+Route::delete('/categorias/adicionar', 'CategoriasController@store')
+    ->name('categorias.adicionar');
 
 //Route::get('/', function () {
 //    return view('welcome');

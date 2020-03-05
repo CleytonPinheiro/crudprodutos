@@ -1,4 +1,3 @@
-
 @extends('layout')
 
 @section('cabecalho')
@@ -7,26 +6,55 @@
 
 @endsection
 
-
 @section('conteudo')
 
-    <ul class="list-group">
+@if(!empty($mensagem))
+<div class="alert alert-success">
+    {{$mensagem}}
+</div>
+@endif
+<a href="{{route('produtos.adicionar')}}" class="btn btn-dark mb-2">Adicionar produtos</a>
+
+    <table class="table table-bordered table-hover table-striped ">
+        <caption>Lista de produtos</caption>
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Ações</th>
+        </tr>
+        </thead>
 
         @foreach($produtos as $produto)
+                <tbody>
+                    <tr>
 
-            <label for="id" class="">ID</label>
-            <li class="list-group-item">{{$produto->id}} </li>
+                        <td>{{$produto->id}}</td>
+                        <td>{{$produto->nome}}</td>
+                        <td>{{$produto->categoria}} </td>
+                        <td>
+                            <div class="btn-group">
+                                <form method="post" action="produtos/editar/{{$produto->id}}">
+                                    @csrf
+                                    <button class="btn btn-primary fas fa-edit ">    Editar</button>
+                                </form>
 
-            <label for="nome" class="">Nome</label>
-            <li class="list-group-item"> {{$produto->nome}} </li>
+                                <form method="post" action="produtos/deletar/{{$produto->id}}"
+                                      onsubmit="return confirm ('Deseja excluir {{$produto->nome}}?')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger far fa-trash-alt">   Excluir</button>
+                                </form>
 
-            <label for="categoria" class="">Categoria</label>
-            <li class="list-group-item"> {{$produto->categoria}} </li>
 
-            {{-- This comment will not be present in the rendered HTML --}}
-
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
         @endforeach
+    </table>
 
-    </ul>
+
 
 @endsection

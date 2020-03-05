@@ -18,7 +18,7 @@
         </div>
     @endif
 
-    <form method="post" action="/produtos/adicionar">
+    <form method="post" action="/produtos/editar/{{$produto->id}}">
         @csrf
 
         <div class="form-group">
@@ -31,13 +31,14 @@
             <input type="text" class="form-control" name="categoria" id="categoria">
         </div>
 
-        <button type="submit" class="btn btn-dark mb-2">Adicionar produto</button>
+        <button type="submit" class="btn btn-dark mb-2">Atualizar produto</button>
 
         <a href="{{route('produtos.listar')}}" class="btn btn-dark mb-2">Listar produtos</a>
 
     </form>
 
 @endsection
+
 
 
 
