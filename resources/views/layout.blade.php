@@ -15,7 +15,7 @@
     <div class="container">
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-primary">
-            <a class="navbar-brand" href="/produtos">Home</a>
+            <a class="navbar-brand" href="/categorias">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbanav-itemrNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

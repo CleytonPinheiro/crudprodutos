@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
+use Illuminate\Support\Facades\DB;
 use App\Produto;
 use Illuminate\Http\Request;
 
 class ProdutosController extends Controller
 {
-    public function index(Request $request){
+    public function index(Request $request)
+    {
         $produtos = Produto::query()->orderBy('nome')->get();
 
         $mensagem = $request->session()->get('mensagem');
@@ -17,13 +20,16 @@ class ProdutosController extends Controller
 
     public function create()
     {
-        return view('produto.create');
+        $categorias = DB::table('categorias')->get();
+
+        return view('produto.create',compact('categorias'));
     }
 
     public function editar($id)
     {
         $produto = Produto::find($id);
-        return view('produto.edit',compact('produto'));
+
+        return view('produto.edit',compact('produto','categoria'));
     }
 
 
@@ -40,7 +46,7 @@ class ProdutosController extends Controller
     public function store(Request $request)
     {
         // Criar classe para validações
-        $request->validate(['nome'=>'required','categoria'=>'required']);
+        $request->validate(['nome'=>'required']);
 
         $produtoCriado = Produto::create($request->all());
 

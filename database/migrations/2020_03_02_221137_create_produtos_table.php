@@ -16,8 +16,13 @@ class CreateProdutosTable extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('categoria');
-            $table->timestamps();
+            $table->integer('categoria_id')->unsigned();
+
+            $table->foreign('categoria_id')
+                ->references('id')
+                ->on('categorias');
+
+
         });
     }
 
